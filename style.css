@@ -1,0 +1,243 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{ 
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}
+
+@font-face {
+	font-family: 'Mullingar-nRgnO';
+    src: url('assets/fonts/Mullingar-nRgnO.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Basaro-9YmRL';
+    src: url('assets/fonts/Basaro-9YmRL.ttf') format('truetype');
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+    background: rgb(0,120,99);
+	background: radial-gradient(circle, rgba(0,120,99,1) 0%, rgba(0,91,75,1) 100%);
+}
+
+ul.navbar {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	font-size: 2em;
+	text-align: center;
+	list-style: none;
+	font-family: 'Fjalla One', sans-serif;
+	padding: .25em;
+	background-color: antiquewhite;
+	border-bottom: .5em double #005748;
+	border-top: .5em double #005748;
+}
+
+a {
+	text-decoration: none;
+	color: #005748;
+	text-transform: uppercase;
+	text-shadow: 0px 2px 1px #645e56;
+}
+
+.header {
+	width: 100%;
+	max-height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4em;
+	text-shadow: 0px 3px 1px #968d81;
+	padding: 10px;
+	color: antiquewhite;
+	animation: fade 2s linear 1;
+}
+
+.h1 {
+	font-family: 'Mullingar-nRgnO';
+}
+
+#logo {
+	height: 180px;
+	width: 180px;
+	margin: 0 12px 0 12px;
+	padding: 4px;
+	border: 10px double antiquewhite;
+	border-radius: 50%;
+	animation: spin 2s linear 1;
+}
+
+.main-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+}
+
+#window-image {
+	width: 541px;
+	height: 400px;
+	background-image: url("./assets/images/window.png");
+	background-repeat: no-repeat;
+    background-color: #404245;
+    background-position: 100% 0;
+    overflow: hidden;
+    border: 4px solid #005748;
+	border-radius: 2em;
+	animation: animatedBackground 10s ease-in-out forwards 1;
+	animation-delay: 1s;        
+}
+
+.text {
+	position: absolute;
+	z-index: 5;
+	text-align: center;
+	font-size: 3em;
+	color: rgba(255,255,255,.9);
+	font-family: 'Fjalla One', sans-serif;
+	animation: 10s ease 0s normal forwards 1 fadetext;
+}
+
+@keyframes animatedBackground {
+	from { 
+		background-position: 100% 0; 
+	}
+	to { 
+		background-position: 0 0; 
+	}
+}
+
+@keyframes fade {
+	0% { 
+		opacity: 0; }
+  	100% { 
+  		opacity: 1; 
+  	}
+}
+
+@keyframes fadetext {
+	0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@keyframes spin {
+  	0% {
+		transform: rotateZ(0deg);
+  	}
+  	62% {
+		transform: rotateZ(270deg);
+  	}
+  	76% {
+		transform: rotateZ(315deg);
+  	}
+  	100% {
+		transform: rotateZ(360deg);
+  	}
+}
+
+@media only screen and (min-width: 2400px) {
+	.header {
+		
+	}
+}
+
+@media only screen and (max-width: 860px) {
+    .header {
+    	font-size: 3em;
+    }
+
+    .container {
+    
+    }
+
+    ul.navbar {
+    	font-size: 1.5em;
+    }
+
+    #logo {
+		height: 120px;
+		width: 120px;
+	}
+
+}
+
+@media only screen and (max-width: 630px) {
+    .header {
+    	font-size: 2.5em;
+    }
+
+    ul.navbar {
+    	font-size: 1.5em;
+    }
+
+}
+
+@media only screen and (max-width: 535px) {
+    .header {
+    	font-size: 2.25em;
+    }
+
+    ul.navbar {
+    	display: flex;
+    	flex-direction: column;
+    }
+    li.nav-btn {
+    	margin: 4px;
+    }
+    #window-image {
+	    background-position: 100% 0;
+	    overflow: hidden;
+		border-radius: 0;  
+		border-left: none;
+		border-right: none;
+	}
+}
+
+@media only screen and (max-width: 505px) {
+    .header {
+    	font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 505px) {
+    .header {
+    	font-size: 1.7em;
+    }
+    #logo {
+		height: 100px;
+		width: 100px;
+		border: 6px double antiquewhite;
+	}
+}
+
+@media only screen and (max-width: 395px) {
+    .header {
+    	font-size: 1.3em;
+    }
+    #logo {
+		height: 100px;
+		width: 100px;
+		border: 6px double antiquewhite;
+	}
+}
+
+
